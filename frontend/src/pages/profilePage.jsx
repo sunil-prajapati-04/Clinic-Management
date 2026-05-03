@@ -76,9 +76,6 @@ function ProfilePage() {
                   <span className="rounded-md bg-indigo-50 px-3 py-1 text-xs font-semibold capitalize text-indigo-700">
                     {role}
                   </span>
-                  <span className="rounded-md bg-slate-100 px-3 py-1 text-xs font-semibold capitalize text-slate-700">
-                    {authUser?.status || "Empolyee"}
-                  </span>
                 </div>
               </div>
             </div>
