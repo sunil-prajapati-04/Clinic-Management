@@ -8,6 +8,7 @@ import DashboardPage from './pages/dashboardPage';
 import AddPatientPage from './pages/addPatientPage';
 import AllPatientsPage from './pages/allPatientsPage';
 import AddMedicinePage from './pages/addMedicinePage';
+import ProfilePage from './pages/profilePage';
 import { useAuthStore } from './store/authStore';
 import { Toaster } from 'react-hot-toast';
 
@@ -56,6 +57,14 @@ function App() {
         element={
           <ProtectedRoute authUser={authUser}>
             <DashboardPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <ProtectedRoute authUser={authUser}>
+            <ProfilePage />
           </ProtectedRoute>
         }
       />

@@ -1,6 +1,8 @@
 import React from "react";
 import { Home, LayoutDashboard } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import LogoutButton from "./logoutButton";
+import ProfileTab from "./profileTab";
 
 function Navbar() {
   const linkClass = ({ isActive }) =>
@@ -20,7 +22,7 @@ function Navbar() {
           <span className="text-xl font-semibold text-slate-900">SBC</span>
         </NavLink>
 
-        <div className="flex items-center gap-2 rounded-lg bg-slate-100 p-1">
+        <div className="flex flex-wrap items-center justify-end gap-2 rounded-lg bg-slate-100 p-1">
           <NavLink to="/" className={linkClass}>
             <Home size={17} />
             Home
@@ -29,6 +31,8 @@ function Navbar() {
             <LayoutDashboard size={17} />
             Dashboard
           </NavLink>
+          <ProfileTab className={linkClass} />
+          <LogoutButton />
         </div>
       </div>
     </nav>
