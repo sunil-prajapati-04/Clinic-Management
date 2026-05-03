@@ -17,7 +17,7 @@ export const login = async(req,res)=>{
             maxAge: 2*24*60*60*1000,
             httpOnly: true,
             secure: true,
-            sameSite: "strict"
+            sameSite: "None"
         })
         console.log("token:",token);
         return res.status(200).json(token)
@@ -51,7 +51,7 @@ export const logout = async(req,res)=>{
         res.clearCookie("sbcToken",{
             httpOnly: true,
             secure: true,
-            sameSite: "strict"
+            sameSite: "None"
         });
         return res.status(200).json({message:"Logout successfully"});
     } catch (error) {
