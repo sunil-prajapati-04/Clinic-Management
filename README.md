@@ -2,10 +2,23 @@
 
 Clinic management web application for Shree Salasar Balaji Clinic. The app helps clinic staff manage employees, patients, medicines, patient cases, prescriptions, and WhatsApp prescription delivery.
 
+## Live Deployment
+
+The project is deployed and available online.
+
+```txt
+Frontend: https://clinic-management-dusky.vercel.app
+Backend API: https://clinic-management-0ufg.onrender.com/sbc/
+```
+
+The frontend is deployed on Vercel and the backend API is deployed on Render.
+
 ## Features
 
 - Employee login with JWT authentication
 - Protected dashboard routes
+- Profile page using the authenticated employee data
+- Navbar profile and logout controls
 - Add employees with role, degree, email, phone, and password
 - Add medicines and search medicines by name
 - Add patients with disease/case details and prescription medicines
@@ -134,6 +147,18 @@ npm install
 npm run dev
 ```
 
+Create a `.env` file inside `frontend/`:
+
+```env
+VITE_API_URL=http://localhost:8080/sbc/
+```
+
+For the deployed backend, use:
+
+```env
+VITE_API_URL=https://clinic-management-0ufg.onrender.com/sbc/
+```
+
 The frontend runs on:
 
 ```txt
@@ -147,7 +172,7 @@ frontend/src/lib/axios.js
 ```
 
 ```js
-baseURL: "http://localhost:8080/sbc/"
+baseURL: import.meta.env.VITE_API_URL
 ```
 
 ## Available Scripts
@@ -262,6 +287,8 @@ node src/lib/med.js
 - Backend CORS currently allows `http://localhost:5173`.
 - Auth uses an `sbcToken` cookie and `withCredentials: true` on the frontend.
 - The login cookie is configured with `secure: true`, so plain HTTP localhost browsers may not store it. For local HTTP development, use HTTPS locally or adjust the cookie config for development.
+- For Vercel deployment, set `VITE_API_URL` in the Vercel environment variables.
+- For Render backend deployment, set all backend `.env` variables in the Render environment settings.
 - `SCERECTKEY` is intentionally spelled that way in the current backend code, so the `.env` key must match it.
 - Some model/file names contain spelling mistakes such as `paitent` and `empolyee`; keep imports consistent unless you refactor all references together.
 - `node_modules/` and `dist/` are generated folders and usually should not be committed to source control.
