@@ -2,12 +2,9 @@ import ioredis from 'ioredis';
 import {config} from 'dotenv';
 config();
 
-
-const redisClient = new ioredis({
-    host:process.env.REDIS_HOST,
-    port:process.env.REDIS_PORT,
-    maxRetriesPerRequest:null,
-})
+const redisClient = new ioredis(process.env.REDIS_URL, {
+  maxRetriesPerRequest: null,
+});
 
 redisClient.on('connect', () => {
   console.log("Redis connected");
