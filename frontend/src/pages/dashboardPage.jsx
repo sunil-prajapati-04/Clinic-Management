@@ -134,7 +134,7 @@ function DashboardPage() {
               Clinic Dashboard
             </h2>
             <p className="mt-2 text-slate-600">
-              Employees, patients, and medicines ko ek jagah se manage karein.
+             
             </p>
           </div>
 
@@ -155,8 +155,7 @@ function DashboardPage() {
                       {item.title}
                     </h3>
                     <p className="mt-2 text-sm leading-6 text-slate-500">
-                      Search aur add options sidebar mein hover par available
-                      hain.
+                      
                     </p>
                   </div>
                 );
@@ -175,8 +174,7 @@ function DashboardPage() {
                     Search panel
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-slate-500">
-                    Sidebar mein kisi bhi Search subtab par click karein, search
-                    bar yahan open hogi.
+                    
                   </p>
                 </div>
               )}

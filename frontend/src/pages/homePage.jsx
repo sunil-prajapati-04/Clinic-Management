@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/navbar";
-import doctorImg from "../assets/ashok-cutout.png";
+import doctorImg from "../assets/doctorImg.png";
 import { Camera, MapPin, Phone, Play, Users } from "lucide-react";
 
 function HomePage() {
